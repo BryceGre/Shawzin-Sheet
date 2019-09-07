@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=640, initial-scale=1">
+        <title>Shawzin Sheet</title>
+        <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Sans">
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/index.js"></script>
+    </head>
+    <body>
+        <div id="controls">
+            <div id="score" class="control-column">
+                <select id="scale" class="control-row" value="10">
+                    <option value="0" selected="selected">Auto Detect</option>
+                </select>
+                <div id="detected" class="ui-corner-all ui-button" style="display:flex;justify-content:center;">
+                    Detected: None
+                </div>
+            </div>
+            <div id="notes" class="control-column">
+                <div class="control-row">
+                    <select id="beats" value="10">
+                        <option value="2" selected="selected">&#9833;</option>
+                        <option value="1">&#9834;</option>
+                    </select>
+                    <label for="tempo">=</label>
+                    <input type="text" id="tempo" name="tempo" value="120">
+                </div>
+                <div id="mods" class="control-row">
+                    <input type='radio' id='none' value='' name='mod' checked='checked' />
+                    <label for='none'>&sung;</label>
+                    <input type='radio' id='flat' value='b' name='mod' />
+                    <label for='flat'><sub>&flat;</sub>&sung;</label>
+                    <input type='radio' id='sharp' value='s' name='mod' />
+                    <label for='sharp'><sub>&sharp;</sub>&sung;</label>
+                </div>
+            </div>
+            <div id="menu" class="control-column">
+                <div class="control-row">
+                    <button id="save" class="menu-button">&#128190;</button>
+                    <button id="load" class="menu-button">&#128194;</button>
+                    <button id="help" class="menu-button">&#10067;</button>
+                </div>
+                <div class="control-row">
+                    <button id="undo" class="menu-button">&#8630;</button>
+                    <button id="redo" class="menu-button">&#8631;</button>
+                    <button id="make" class="menu-button">&#127928;</button>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+        </div>
+        <div id="dialog-save">
+            <div class="file-list">
+                <ol class="file-select">
+                </ol>
+            </div>
+            <label for="file-name">Name:</label>
+            <input type="text" name="file-name" class="file-name" placeholder="untitled" class="text ui-widget-content ui-corner-all">
+        </div>
+        <div id="dialog-load">
+            <div class="file-list">
+                <ol class="file-select">
+                </ol>
+            </div>
+            <label for="file-name">Name:</label>
+            <input type="text" name="file-name" class="file-name" placeholder="untitled" class="text ui-widget-content ui-corner-all">
+        </div>
+        <div id="dialog-make">
+            <input type="text" id="make-text" name="make-text" class="make-text" class="text ui-widget-content ui-corner-all" style="display:block" readonly>
+            <button id="make-copy">Copy to Clipboard</button>
+        </div>
+        <div id="dialog-help">
+            <ul>
+                <li>Select a preferred scale, or use Auto Detect.
+                    <ul>
+                        <li>Auto detect will try to find the "best" scale to use.</li>
+                        <li style="color:green">If a scale shows Green, all notes matched perfectly.</li>
+                        <li style="color:#888800">If a scale shows Yellow, some notes need to be changed by a half-step.</li>
+                        <li style="color:Red">If a scale shows Red, some notes need to be changed by more than a half-step.</li>
+                    </ul>
+                </li>
+                <li>Select the beats and tempo you wish to use.Select the type of note you wish to add.</li>
+                <li>Click anywhere in the content area to add a note. Click a note to remove it.</li>
+                <li>Scroll to the right to add more notes. Use the Undo and Redo buttons as you see fit.</li>
+                <li>Click the Save button to save your song. Click the Load button to load a saved song.</li>
+                <li>Click the Make (guitar) button to generate a song, then load it into your Shawzin!</li>
+            </ul>
+            <hr>
+            <div>Source code is available on GitHub</div>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </div>
+    </body>
+</html>
