@@ -16,6 +16,7 @@ body {
     margin: calc(50vh - 180px) calc(50vw - 320px);
     min-width: 640px;
     min-height: 360px;
+    height: 360px;
 }
 
 @media screen and (max-height: 360px) {
@@ -32,11 +33,10 @@ body {
     }
 }
 
-
 #controls {
     display: flex;
     flex-direction: row;
-    height: calc(20% + 4px);
+    height: 20%;
     background-color: beige;
 }
 
@@ -84,20 +84,24 @@ div.control-row {
     height: calc(100% - .422em);
 }
 
+label {
+    line-height: 35px;
+}
+
 #beats {
     height: 100%;
 }
 
 #beats-button {
-    width: 20%;
-    height: calc(100% - 1em);
+    width: calc(20% - 2px);
+    height: calc(100% - 1em + 1px);
     margin-left: 0px;
     margin-right: 0px;
 }
 
 span.ui-spinner {
     width: 50%;
-    height: calc(100% - 3px);
+    height: calc(100% - 2px);
     margin: 0px;
 }
 
@@ -115,6 +119,7 @@ button.menu-button {
 #undo, #redo {
     font-size: 20pt;
     padding-left: 10%;
+    padding-top: 2%;
 }
 
 #undo {
@@ -133,8 +138,18 @@ button.menu-button {
     font-size: 10pt;
 }
 
+div.help-footer {
+    display: flex;
+    flex-direction: row;
+}
+
+div.help-footer-half {
+    width: 50%;
+    margin: auto;
+}
+
 #content {
-    height: calc(80% + 4px);
+    height: 80%;
     width: 100%;
     background-color: white;
     overflow-x: scroll;
